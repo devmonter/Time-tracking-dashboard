@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./index.css">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="main-font-item">
+        <div class="top-inside-main">
+          <img src="./images/image-jeremy.png" alt="profile">
+          <div>
+            <p>Report for</p>
+            <span>Jeremy Robson</span>
+          </div>
+        </div>
+        <div class="buttom-inside">
+          <ul class="menu">
+            <li class="list-item" id="day"><a href="#Daily">Daily</a></li>
+            <li class="list-item focus" id="week"><a href="#Weekly">Weekly</a></li>
+            <li class="list-item" id="month"><a href="#Monthly">Monthly</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="font-item">
+        <div class="top-inside work">
+          <img src="./images/icon-work.svg" alt="work">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Work</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">5hrs</span>
+          <span class="day show white" id="week">32hrs</span>
+          <span class="day white" id="month">103hrs</span>
+          <p class="day" id="day">Last Day - 7hrs</p>
+          <p class="day show" id="week">Last Week - 36hrs</p>
+          <p class="day" id="month">Last Month - 128hrs</p>
+        </div>
+      </div>
+      <div class="font-item">
+        <div class="top-inside exercise">
+          <img src="./images/icon-exercise.svg" alt="exercise">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Exercise</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">1hr</span>
+          <span class="day show white" id="week">4hrs</span>
+          <span class="day white" id="month">11hrs</span>
+          <p class="day" id="day">Last Day - 1hr</p>
+          <p class="day show" id="week">Last Week - 5hrs</p>
+          <p class="day" id="month">Last Month - 18hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="font-item">
+        <div class="top-inside play">
+          <img src="./images/icon-play.svg" alt="play">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Play</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">1hr</span>
+          <span class="day show white" id="week">10hrs</span>
+          <span class="day white" id="month">23hrs</span>
+          <p class="day" id="day">Last Day - 2hrs</p>
+          <p class="day show" id="week">Last Week - 8hrs</p>
+          <p class="day" id="month">Last Month - 29hrs</p>
+        </div>
+      </div>
+      <div class="font-item">
+        <div class="top-inside social">
+          <img src="./images/icon-social.svg" alt="social">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Social</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">1hr</span>
+          <span class="day show white" id="week">5hrs</span>
+          <span class="day white" id="month">21hrs</span>
+          <p class="day" id="day">Last Day - 3hrs</p>
+          <p class="day show" id="week">Last Week - 10hrs</p>
+          <p class="day" id="month">Last Month - 23hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="font-item">
+        <div class="top-inside study">
+          <img src="./images/icon-study.svg" alt="study">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Study</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">0hrs</span>
+          <span class="day show white" id="week">4hrs</span>
+          <span class="day white" id="month">13hrs</span>
+          <p class="day" id="day">Last Day - 1hr</p>
+          <p class="day show" id="week">Last Week - 7hrs</p>
+          <p class="day" id="month">Last Month - 19hrs</p>
+        </div>
+      </div>
+      <div class="font-item">
+        <div class="top-inside self-care">
+          <img src="./images/icon-self-care.svg" alt="self-care">
+        </div>
+        <div class="inside">
+          <div class="head white">
+            <p>Self Care</p>
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </div>
+          <span class="day white" id="day">0hrs</span>
+          <span class="day show white" id="week">2hrs</span>
+          <span class="day white" id="month">7hrs</span>
+          <p class="day" id="day">Last Day - 1hr</p>
+          <p class="day show" id="week">Last Week - 2hrs</p>
+          <p class="day" id="month">Last Month - 11hrs</p>
+        </div>
+      </div>
+  </div>
+  <script>
+    const menu = document.querySelectorAll('.list-item');
+    const cards = document.querySelectorAll('.day');
+    function focus () {
+      menu.forEach((item) =>
+        item.classList.remove('focus'));
+      this.classList.add('focus');
+      cards.forEach((item) => {
+        item.classList.remove('show');
+        if (this.id === item.id) {
+          item.classList.add('show');
+        }
+      });
+    }
+    menu.forEach((item) =>
+      item.addEventListener('click', focus));
+  </script>
+</body>
+</html>
